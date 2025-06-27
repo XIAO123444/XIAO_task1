@@ -63,7 +63,7 @@ public:
         return true;
     }
 };
-//my english
+//my english is good
 int main() {
     int num_node, num_edge;
     cout << "�����붥������ͱ���: ";
