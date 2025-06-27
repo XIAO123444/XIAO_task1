@@ -4,9 +4,9 @@
 using namespace std;
 
 class Graph {
-    int V;             // ¶¥µã¸öÊý
-    list<int>* adj;    // ÁÚ½Ó±í
-    int* indegree;     // ¼ÇÂ¼Ã¿¸ö¶¥µãµÄÈë¶È
+    int V;             // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    list<int>* adj;    // ï¿½Ú½Ó±ï¿½
+    int* indegree;     // ï¿½ï¿½Â¼Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 public:
     Graph(int V) {
@@ -29,7 +29,7 @@ public:
 
     bool topologicalSort() {
         queue<int> q;
-        // ³õÊ¼»¯¶ÓÁÐ
+        // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         for (int i = 0; i < V; ++i)
             if (indegree[i] == 0)
                 q.push(i);
@@ -43,19 +43,19 @@ public:
             topOrder.push_back(u);
             ++count;
 
-            // ¸üÐÂÁÚ½Ó¶¥µãµÄÈë¶È
+            // ï¿½ï¿½ï¿½ï¿½ï¿½Ú½Ó¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             for (auto it = adj[u].begin(); it != adj[u].end(); ++it)
                 if (--indegree[*it] == 0)
                     q.push(*it);
         }
 
-        // Êä³ö½á¹û
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (count != V) {
-            cout << "Í¼ÖÐ´æÔÚ»·£¬ÎÞ·¨Íê³ÉÍØÆËÅÅÐò" << endl;
+            cout << "Í¼ï¿½Ð´ï¿½ï¿½Ú»ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << endl;
             return false;
         }
 
-        cout << "ÍØÆËÅÅÐò½á¹û: ";
+        cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: ";
         for (int i : topOrder)
             cout << i << " ";
         cout << endl;
@@ -63,15 +63,15 @@ public:
         return true;
     }
 };
-
+//my english
 int main() {
     int num_node, num_edge;
-    cout << "ÇëÊäÈë¶¥µã¸öÊýºÍ±ßÊý: ";
+    cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ë¶¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í±ï¿½ï¿½ï¿½: ";
     cin >> num_node >> num_edge;
 
     Graph g(num_node);
 
-    cout << "ÇëÊäÈë" << num_edge << "Ìõ±ß(Æðµã ÖÕµã):" << endl;
+    cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" << num_edge << "ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ ï¿½Õµï¿½):" << endl;
     for (int i = 0; i < num_edge; ++i) {
         int m, n;
         cin >> m >> n;
