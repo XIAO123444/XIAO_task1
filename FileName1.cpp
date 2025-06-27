@@ -9,7 +9,7 @@ typedef struct bitree {
     bitree* rchild;
 } bitree;
 
-// ÐÞ¸Ä²åÈëÂß¼­£ºÕýÈ·´¦Àí¿ÕÊ÷Çé¿ö
+// ï¿½Þ¸Ä²ï¿½ï¿½ï¿½ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 bitree* inserttree(bitree* root, int data) {
     if (root == NULL) {
         bitree* newnode = new bitree();
@@ -26,14 +26,14 @@ bitree* inserttree(bitree* root, int data) {
     return root;
 }
 
-// Ìí¼ÓÄÚ´æÊÍ·Åº¯Êý
+// ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½Í·Åºï¿½ï¿½ï¿½
 void freeTree(bitree* root) {
     if (root == NULL) return;
     freeTree(root->lchild);
     freeTree(root->rchild);
     delete root;
 }
-//Êä³öÒ¶×Ó½Úµã
+//ï¿½ï¿½ï¿½Ò¶ï¿½Ó½Úµï¿½
 void outleaves(bitree* root) {
     if (!root) return;
     if (!root->lchild && !root->rchild) {
@@ -42,7 +42,7 @@ void outleaves(bitree* root) {
     outleaves(root->lchild);
     outleaves(root->rchild);
 }
-//²éÑ¯¸ß¶È
+//ï¿½ï¿½Ñ¯ï¿½ß¶ï¿½
 int height(bitree* root)
 {
     if (root == NULL)
@@ -56,7 +56,7 @@ int height(bitree* root)
         return(left > right) ? left + 1 : right + 1;
     }
 }
-// ¸Ä½øÃ°ÅÝÅÅÐòÊµÏÖ
+// ï¿½Ä½ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½
 void bubbleSort(int* arr, int n) {
     for (int i = 0; i < n - 1; i++) {
         bool swapped = false;
@@ -69,7 +69,7 @@ void bubbleSort(int* arr, int n) {
         if (!swapped) break;
     }
 }
-//ÖÐÐò±éÀú
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 int q = 0;
 void check(int* b, int* c,int Datacount) 
 {
@@ -84,12 +84,12 @@ void check(int* b, int* c,int Datacount)
     }
     if (flag) 
     {
-        cout << "\nÖÐÐò±éÀú½á¹ûÕýÈ·\n";
+        cout << "\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·\n";
         
     }
     else 
     {
-        cout << "\nÖÐÐò±éÀú½á¹û´íÎó\n";
+        cout << "\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n";
     }
 }
 void inOrderTraversal(bitree* root,int* c) {
@@ -105,16 +105,16 @@ int main() {
     srand(time(0));
     int DataCount, MaxData;
     do {
-        cout << "ÇëÊäÈëDataCount (10-20): ";
+        cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½DataCount (10-20): ";
         cin >> DataCount;
     } while (DataCount < 10 || DataCount > 20);
 
     do {
-        cout << "ÇëÊäÈëMaxData (50-100): ";
+        cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½MaxData (50-100): ";
         cin >> MaxData;
     } while (MaxData < 50 || MaxData > 100);
 
-    //Ëæ»úÊý
+    //ï¿½ï¿½ï¿½ï¿½ï¿½
     int* a =(int *)malloc(sizeof(int)*DataCount);
     int* b = (int*)malloc(sizeof(int) * DataCount);
 
@@ -132,38 +132,38 @@ int main() {
         } while (!flag);
     }
 
-    cout << "\n------ Ô­Ê¼Êý¾Ý ------\n";
+    cout << "\n------ Ô­Ê¼ï¿½ï¿½ï¿½ï¿½ ------\n";
     for (int i = 0; i < DataCount; i++) {
         cout << a[i] << " ";
     }
     cout << endl;
 
-     //ÅÅÐòÊä³ö
+     //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     copy(a, a + DataCount, b);
     bubbleSort(b, DataCount);
 
-    cout << "\n------ ÅÅÐòºóÊý¾Ý ------\n";
+    cout << "\n------ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ------\n";
     for (int i = 0; i < DataCount; i++) {
         cout << b[i] << " ";
     }
     cout << endl;
 
-    // ¹¹½¨¶þ²æËÑË÷Ê÷
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     bitree* Btree = NULL;
     for (int i = 0; i < DataCount; i++) {
         Btree = inserttree(Btree, a[i]);
     }
-    cout << "\n------ ¸ß¶È"<<height(Btree)<<" ------\n";
+    cout << "\n------ ï¿½ß¶ï¿½"<<height(Btree)<<" ------\n";
 
-    cout << "\n------ Ò¶×Ó½Úµã ------\n";
+    cout << "\n------ Ò¶ï¿½Ó½Úµï¿½ ------\n";
     outleaves(Btree);
 
-    cout << "\n\n------ ÖÐÐò±éÀú½á¹û ------\n";
+    cout << "\n\n------ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ------\n";
     int* c = (int*)malloc(sizeof(int) * DataCount);
 
     inOrderTraversal(Btree,c);
     check(b, c,DataCount);
-    // ÊÍ·ÅÄÚ´æ
+    // ï¿½Í·ï¿½ï¿½Ú´ï¿½
     free(a);
     free(b);
     free(c);
@@ -172,3 +172,5 @@ int main() {
     cin.get();
     return 0;
 }
+
+//endl
