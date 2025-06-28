@@ -34,7 +34,7 @@ int p_nearby=0;//记录所属的指针
 int input;
 void output() 
 {
-
+    printf("\n\n");
     int target_priority=current_state-1;
     if (target_priority==0)
     {
@@ -92,7 +92,7 @@ int main()
             {
                 printf("无效操作");
             }
-            printf("%d,%d",p,p_nearby);
+             
             break;
         case L:
             if(p!=0&&menu[p-1].priority>=menu[p].priority)
@@ -105,7 +105,7 @@ int main()
             {
                 printf("无效操作");
             }
-            printf("%d,%d",p,p_nearby);
+             
 
             break;
         case CONFIRM:
@@ -119,7 +119,7 @@ int main()
             {
                 printf("无效操作");
             }
-        printf("%d,%d",p,p_nearby);
+         
 
             break;
         case BACK:
@@ -137,7 +137,7 @@ int main()
         {
             printf("无效操作");
         }
-        printf("%d,%d",p,p_nearby);
+         
 
         default:
             break;
