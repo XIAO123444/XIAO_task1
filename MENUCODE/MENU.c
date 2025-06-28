@@ -1,49 +1,33 @@
 #include "stdio.h"
-#include "stdlib.h"
+#include "string.h"
+#include "show.h"
 int condition;
 int up_down;//页面前移后移
 int add;//加减
-typedef struct v
-{
-    char name[16];  //变量名字
-    float num;      //变量值
-    int x;          //在X轴上显示起点
-    int y;          //在Y轴上显示起点
-};
-typedef struct MENU_page
-{
-    char page_name[12];
-    int v_num;
-    struct v V[10];
-};
 
-void key()
-{
-    switch (condition)
-    {
-    case 1:
-        up_down=1;//页面前移
-        break;
-    case 2:
-        up_down=-1;//页面后移
-        break;
-    case 3:
-        add=1;//数据+1
-        break;
-    case 4:
-        add=-1;//数据-1
-        break;
-    default:
-        break;
-    }
-}
 
-void show_pid(int i)
+MENU_pagedef pidmenu;
+void pidMenu_init()
 {
 
 }
 int main()
 {
+    pidmenu.v_num=3;
+    strcpy(pidmenu.V[0].name,"p");
+    strcpy(pidmenu.V[1].name,"i");
+    strcpy(pidmenu.V[2].name,"d");
+    pidmenu.V[0].num=1;
+    pidmenu.V[1].num=1;
+    pidmenu.V[2].num=1;
+    pidmenu.V[0].x=0;
+    pidmenu.V[1].x=1;
+    pidmenu.V[2].x=1;
+    pidmenu.V[0].y=0;
+    pidmenu.V[1].y=1;
+    pidmenu.V[2].y=1;
 
+    strcpy(pidmenu.page_name, "pid");
+    show_page(pidmenu);    
     return 0;
 }
