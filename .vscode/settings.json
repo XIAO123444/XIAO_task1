@@ -60,7 +60,9 @@
     "stdlib.h": "c",
     "string.h": "c",
     "list": "cpp",
-    "memory_resource": "cpp"
+    "memory_resource": "cpp",
+    "array": "c",
+    "string_view": "c"
   },
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "aiXcoder.showTrayIcon": true
