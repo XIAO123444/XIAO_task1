@@ -26,7 +26,7 @@ enum condition{
     CONFIRM,
     BACK
 
-}condition;
+}condition;  
     
 int current_state=1;
 int p=0;//记录当前指针
@@ -82,11 +82,11 @@ int main()
         switch (condition)
         {
         case R:
-            if (strcmp(menu[p].str, "end") != 0&&menu[p+1].priority>=menu[p].priority)
+            if (strcmp(menu[p+1].str, "end") != 0&&menu[p+1].priority>=menu[p].priority)
             {
                 int temp=menu[p].priority;
                 p++;
-                while(menu[p].priority!=temp){p++;}
+                while(menu[p].priority!=temp){p++;} 
             }
             else
             {
