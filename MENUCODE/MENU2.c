@@ -11,7 +11,7 @@ MENU menu[]={
     {1,"pid查看与修改"},
         {2,"p"},
             {3,"x"},
-        {2,"i"},
+        {2,"i"}, 
         {2,"d"},
     {1,"车状态"},
         {2,"v"},
@@ -21,7 +21,7 @@ MENU menu[]={
 enum condition{
     L,
     R,
-    UP,
+    UP, 
     DOWN,
     CONFIRM,
     BACK
@@ -82,7 +82,7 @@ int main()
         switch (condition)
         {
         case R:
-            if (strcmp(menu[p+1].str, "end") != 0&&menu[p+1].priority>=menu[p].priority)
+            if (strcmp(menu[p].str, "end") != 0&&menu[p+1].priority>=menu[p].priority)
             {
                 int temp=menu[p].priority;
                 p++;
@@ -92,6 +92,7 @@ int main()
             {
                 printf("无效操作");
             }
+                printf("%d,%d\n",p,p_nearby);
              
             break;
         case L:
@@ -105,7 +106,8 @@ int main()
             {
                 printf("无效操作");
             }
-             
+            
+                printf("%d,%d\n",p,p_nearby);
 
             break;
         case CONFIRM:
@@ -120,6 +122,7 @@ int main()
                 printf("无效操作");
             }
          
+         printf("%d,%d\n",p,p_nearby);
 
             break;
         case BACK:
@@ -127,17 +130,18 @@ int main()
         {
             current_state--;
             p=p_nearby;
-            while (menu[p_nearby].priority!=current_state)
+            while (menu[p_nearby].priority!=current_state-1)
             {
                 p_nearby--;
             }
-        }
+        } 
         
         else
         {
             printf("无效操作");
         }
-         
+        printf("%d,%d\n",p,p_nearby);
+
 
         default:
             break;
